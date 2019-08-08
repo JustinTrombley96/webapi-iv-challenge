@@ -6,4 +6,6 @@ const postsRouter = require('./routes/postsRouter');
 server.use(express.json());
 server.use('/api/posts', postsRouter);
 
-server.listen(8000, () => console.log('port running on 8000'));
+server.get('/', (req, res) => {
+	res.send('<h1>Welcome to my deployed app!</h1>');
+});
